@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
+
+<head>
+  <title>Online Guru home</title>
+
+</head>
+{% block content %}
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin :0;
+}
+.hero-bg {
+    background: #307D99;
+    color:white;
+    text-align: center;
+    padding-bottom: 4em;
+}
+header {
+    padding: 1em 0;
+}
+.hero-bg a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+section {
+    margin: 0 1em;
+}
+h1 {
+font-size: 2.52rem;
+margin: 2em;
+}
+h1 span{
+    text-transform: uppercase;
+    display: block;
+    font-size: 1.3rem;
+    position: relative;
+    z-index: 1;
+}
+h1 span::before {
+    content: ' ';
+    position: absolute;
+    width: 3em;
+    background: #00BFFF;
+    height: .4em;
+    bottom: 0;
+    z-index: -1;
+    margin-left: -.4em;
+}
+.hero-bg p{
+    font-weight: bold;
+    margin: 0 1em 3em;
+}
+.form-container {
+    background-color: white;
+    margin: 2em -1em 0;
+    padding: 2em;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+}
+label {
+    color: #2D7D98;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+}
+input[type=text] {
+    border: 1px solid #707070;
+    width: 40%;
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius: 2em;
+    margin-top: 1.2em;
+}
+.form-container p {
+    color: gray;
+    margin-top: 1.5em;
+}
+input[type=button] {
+    background-color: #F89104;
+    border: none;
+    width: 30%;
+    color: white;
+    font-weight: bold;
+    padding: 1em 0;
+    border-radius: .5em;
+    font-size: 1.3em;
+    cursor: pointer;
+
+}
+input[type=button]:hover {
+    background-color: rgb(216, 126, 1);
+    }
+.learn {
+    margin: 0;
+}
+img {
+    width: 100%;
+}
+.right-col {
+    text-align: center;
+    margin: 3em 1em;
+}
+h2 {
+    text-transform: uppercase;
+    position: relative;
+}
+
+h2::before {
+    content: ' ';
+    position: absolute;
+    width: 7em;
+    background: #00BFF0;
+    height: .4em;
+    bottom: 0;
+    z-index: -1;
+    margin-left: -.4em;
+}
+p {
+    line-height: 1.2em;
+}
+
+@media (min-width: 730px) {
+
+    section {
+        margin: 0 4em;
+    }
+    form-container: {
+        margin: 2em -4em 0;
+    }
+
+}
+    </style>
+
+   <div class="hero-bg">
+        <section class="top">
+            <header>
+                <a href="#">Online Guru</a>
+            </header>
+            <h1><span>Learning</span> is fun here, come join us now!</h1>
+            <p>learn today</p>
+
+            <div class="form-container">
+                <form action="">
+                    <div class="form-left">
+                        <label for="course">
+                            Enter interested course:
+                        </label>
+                        <input type="text" name="course" id="course">
+                        <p>Example: "Painting"</p>
+                        <input type="button" value="Find courses now">
+                    </div>
+                </form>
+            </div>
+
+        </section>
+    </div>
+
+    <section class="learn">
+        <div class="right-col">
+            <h2>Start learning now.</h2>
+            <p>This is the best platform for E-education.</p>
+        </div>
+        <img src="images/learning1.jpg">
+    </section>
+
+  {% endblock content %}
+</body>
+</html>

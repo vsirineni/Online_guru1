@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
+{#this is to add filter function in html template for user enrollment purpose Apr 9 2020#}
+{% load mps_extras %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<body>
+{% block content %}
+    <br>
+    <br>
+    {#    this is to give messages when user is enrolled to a class - Apr 9 2020#}
+    <div class="container">
+        <table class="table table-unbordered table-hover">
+            <tbody>
+            {# if there are no online hobbies created by admin or instructor-- Apr 9 2020 #}
+            {% if not OnlineHobbies %}
+                No Online classes are currently available.
+            {% else %}
+                {#if online hoobies are present - Apr 9 2020 #}
+                {% for OnlineHobby in OnlineHobbies %}
+                    <tr>
+                        <td>
+                            <img src="#" class="img-rounded img-responsive" id="onlinepics"
+                                 style="width: 30%"
+                                 alt={{ OnlineHobby.online_class_name }}><br>
+                            <h3>{{ OnlineHobby.online_class_name }}</h3>
+                            <h4> {{ OnlineHobby.description }}</h4>
+                            <br>
+                            {% for enrollment in OnlineHobby.OnlineClassEnroll.all|for_user:user %}
+
+                               {# check enrollment status of that user, if enrolled - Apr 9 2020 #}
+                                {% if enrollment.enrollment_status %}
+                                    <a href="{% url 'online_class_video_page' OnlineHobby.id %}"
+                                       class="btn btn-warning">Get Started</a>
+                                {% else %}
+                                {#     if user is not enrolled  - Apr 9 2020 #}
+                                    <a href="{% url 'online_class_enroll' OnlineHobby.id %}"
+                                       onclick="return confirm('Are you sure you want to Enroll?')"
+                                       class="btn btn-warning">Enroll</a>
+                                {% endif %}
+                            {% endfor %}
+                            {% if not OnlineHobby.OnlineClassEnroll.all|for_user:user %}
+                                <a href="{% url 'online_class_enroll' OnlineHobby.id %}"
+                                       onclick="return confirm('Are you sure you want to Enroll?')"
+                                       class="btn btn-warning">Enroll</a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}
+</body>
+</html>

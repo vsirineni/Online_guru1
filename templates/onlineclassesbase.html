@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{#this template tags helps to give list of details for videolinks and class requirements - Apr 9 2020 #}
+{% load mps_extras %}
+<div class="container-basevideo">
+  {% block content %}
+        <h1 id="thead">{{ onlineclassvideos.class_title }}</h1>
+        <h2>{{ onlineclassvideos.class_subtitle }}</h2>
+        <h3>Requirements</h3>
+        {# provide class requirements in list - Apr 9 2020 #}
+        {% with onlineclassvideos.class_requirements|split:"." as class_requirements_list %}
+            {% for classrqts in class_requirements_list %}
+                <li>{{ classrqts }}</li>
+            {% endfor %}
+        {% endwith %}
+        <h3>What you'll learn</h3>
+        <p>{{ onlineclassvideos.class_goal }}</p>
+
+      <p>More information can be found in <cite><q>https://www.udemy.com/course/photography-masterclass-complete-guide-to-photography</q></cite>.</p>
+        <h2>Learn {{ onlineclassvideos.online_class_name }} : </h2>
+        {# this splits video links so that it will display lesson1 video - Apr 9 2020  #}
+        {% with onlineclassvideos.class_video_links|split:"," as class_video_links_list %}
+            <div class="embed-responsive-1by1">
+                <iframe class="embed-responsive-item-1" id="vid_frame"
+                        src="https://www.youtube.com/embed/v/{{ class_video_links_list.0 }}?version=3&loop=1&playlist={{ class_video_links_list.0 }}"
+                        frameborder="0" allowfullscreen></iframe>
+            </div>
+        {# Display Video lessons as sub items - Apr 9 2020   #}
+         {% for classVideos in class_video_links_list %}
+                <div class="vid-list-1">
+                    <div class="vid-item-1"
+                         onClick="document.getElementById('vid_frame').src='http://youtube.com/embed/{{ classVideos }}?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                        <div class="thumb-1">
+                            <img id="link-thumbnail" src="http://img.youtube.com/vi/{{ classVideos }}/0.jpg"
+                                 alt="lesson1"/>
+                        </div>
+                        <div class="desc">
+                            Lesson {{ forloop.counter }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endwith %}
+    {% endblock content %}
+</div>
+

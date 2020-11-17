@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% block content %}
+<body>
+
+<div class="row">
+    <h3 style="font-weight: inherit">My Profile</h3>
+</div>
+<br/>
+<div class="form-row row mb-4 mt-4">
+    <div class="info-wrapper">
+        <div class="col-sm-2 col-form-label info"> Username:</div>
+        <div class="col-sm-4">{{ user.username }}</div>
+    </div>
+</div>
+<br/>
+<div class="form-row row mb-4 mt-4">
+    <div class="info-wrapper">
+        <div class="col-sm-2 col-form-label info"> Email:</div>
+        <div class="col-sm-4">{{ user.email }}</div>
+    </div>
+</div>
+<br/>
+<div class="form-row row mb-4 mt-4">
+    <div class="info-wrapper">
+        <div class="col-sm-2 col-form-label info"> Phone:</div>
+        <div class="col-sm-4">{{ user.cell_phone }}</div>
+    </div>
+</div>
+<br>
+<div class="col-sm-2">
+    <a class="btn btn-default" href="{% url 'profile' %}">
+                        Edit My Profile</a>
+</div>
+</body>
+{% endblock content %}
+</html>

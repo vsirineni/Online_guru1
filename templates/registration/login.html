@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign in</title>
+</head>
+<body>
+<!doctype html>
+<html lang="en">
+{% extends 'base.html' %}
+{% block title %}Log In{% endblock title %}
+
+{% block content %}
+<h2>Log In</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-success ml-2" type="submit">Log In</button>
+    <a href="{% url 'password_reset_form' %}">Forgot Password</a>
+</form>
+{% endblock content %}
+</html>
+
+
+</body>
+</html>

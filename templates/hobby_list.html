@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<body>
+{% block content %}
+    <br>
+    <br>
+
+   <div>
+        <table class="table table-unbordered table-hover">
+            {% for Hobby in Hobbies %}
+                <tr>
+                    <td>
+                        <img src = "{{Hobby.image.url}}" id="inclasspics" alt={{ Hobby.class_name }}/>
+                        <br>
+                        <h3>
+                            {{ Hobby.class_name }}
+                        </h3>
+                        <br>
+                        <h4>
+                            {{ Hobby.short_description }}
+                        </h4>
+                        <br>
+                        <p>
+                            {{ Hobby.description }}
+                        </p>
+                        <br>This class is available from
+                        <a class="warning">{{ Hobby.created_date }}     </a> <a href="{% url 'add_to_cart' Hobby.class_name %}" id="addcart" onclick="return alert('Class successfully added to the cart!')" class="btn btn-warning">Add to cart</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+
+
+    </div>
+{% endblock content %}
+</body>
+</html>

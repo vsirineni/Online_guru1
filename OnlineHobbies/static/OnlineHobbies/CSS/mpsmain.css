@@ -1,0 +1,293 @@
+/*{# --------------------------  base page,hobbies css -------------#}*/
+body {
+    font-family: "monospace", sans-serif;
+    background: rgb(214, 174, 214); /*Backup for background images*/
+    font-style: italic;
+    /*            added the below to make footer not overlap body content*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+     background-image: url('/User/media/user/images/Hobby.jpg');
+     background-repeat: no-repeat;
+}
+
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    height: 120px;
+    color: gray;
+
+    /*providing UI with font size and colr on the to links march 16*/
+   /* font-family: 'Goudy Old Style', cursive;*/
+    font-family: 'SansSerif';
+    font-size: 22px;
+    background-image: linear-gradient(darkred);
+}
+
+/*removing box  border of navigation bar where links are placed*/
+.navbar-inverse {
+    width: 100%;
+    /*position: fixed;*/
+    /*rgb(241, 245, 251)*/
+    box-shadow: none;
+    border: 0 !important;
+}
+
+/*changing the font color of the links in home page march 17*/
+.navbar-inverse .navbar-nav > li > a {
+    /*color: red;*/
+    color: black;
+
+}
+
+/*changing the color of th links on hover in the home page march 17*/
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: red;
+}
+
+/* to put logo in the middle*/
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%; /*this made the logo to be in center of links*/
+    /*margin-top:-50px;*/
+    transform: translatex(-50%);
+    margin: -15px auto;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.buttonFont {
+    font-size: x-large;
+}
+
+.background {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+    height: 650px
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+    padding-top: 20px;
+    background-color: #f1f1f1;
+    height: 100%;
+}
+
+/* Set Footer position fixed, brown background color, white text and some padding */
+.footer, footer > p {
+
+    color: red;
+    padding: 15px;
+    position: static;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    text-align: center;
+
+}
+
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 76px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+
+    .row.content {
+        height: auto;
+    }
+
+}
+
+p:hover, p.active {
+    color: blue;
+    font-size: 110%; /*comment if font size needs to be the same on hover*/
+    /*  background-color: whitesmoke; Uncomment this line for the background to change on hover*/
+
+}
+
+.lingrad {
+    /* background-image: linear-gradient(#fff0f5,#d3d3d3);*/
+    background-image: linear-gradient(lightsteelblue, lightpink);
+    height: 1500px;
+}
+
+h3:hover, h3:active {
+    color: gray;
+    font-size: 120%;
+}
+
+/*to style elements on classes page in a box*/
+.box {
+    max-width: 800px;
+    padding: 30px;
+    background: white;
+    margin: auto;
+    border: 1px solid rgb(145, 0, 0);
+    background-image: linear-gradient(lightyellow,rgb(219, 235, 255))
+
+}
+.item-wrapper {
+    display: flex;
+    max-width: 800px;
+    padding: 30px;
+    padding-bottom: 20px;
+    background: rgba(126, 122, 121, 0.36);
+    margin: auto;
+    border: 1px solid rgba(72, 70, 69, 0.96);
+    background-image: linear-gradient(lightyellow,rgb(219, 235, 255))
+}
+
+.item {
+    display: flex;
+    width: 50%;
+    padding: 6px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: beige;
+}
+
+.item-description {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 4;
+    width: 50%;
+    padding: 6px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: beige;
+
+}
+
+
+#myNavbar, #myCarousel {
+    padding-top: 35px;
+
+}
+
+/* changing font details of dropdown items Usermenu*/
+.dropdown-item {
+    font-family: "sans-serif";
+    font-size: large;
+
+}
+
+a.dropdown-item:hover {
+    background-color: #ddd;
+    display: block;
+    text-decoration: none;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:hover {
+    background-color: transparent;
+    color: red;
+}
+
+/*  Adding styles requred for profile.html*/
+
+.info-wrapper {
+    display: flex;
+    width: 50%;
+    padding: 6px;
+    padding-bottom: 10px;
+    background-color: beige;
+}
+
+.info {
+    font-family: inherit;
+    font-weight: bold;
+    margin-right: 0px;
+}
+
+.value {
+    font-family: inherit;
+    font-weight: lighter;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}
+
+/*Styling the content of 'about us' page  March 19*/
+.box1 {
+    max-width: 900px;
+    padding: 30px;
+    background: linear-gradient(lightpink,rgb(219, 235, 255),lightpink,rgb(219, 235, 255));
+    margin: auto;
+    border: 0px;
+    font-family: "sans-serif";
+    font-size : 110%;
+}
+/*center the image on about us page March 19*/
+.center_img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*Styles for the drop down button for class- online and in-class March 28*/
+.dropdown .dropbtn {
+    font-size: 18px;
+    border: none;
+    outline: none;
+    color: grey; /*main list item color*/
+    padding: 10px 16px; /*Align the 'classes' on the navigation bar*/
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+.dropdown-content {
+    display: none; /*display only when hover*/
+    position: absolute; /*drop down stays in one place,review us is not displaced*/
+  /*  background-color: #f9f9f9; /*white background of dropdown*/
+    min-width: 160px; /*width of dropdown*/
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);/*effect on box??*/
+    z-index: 1;
+}
+
+.dropdown-content a {
+    /*  float: none;*/
+    color: grey; /*color for online,inclass*/
+    padding: 12px 16px; /*padding between words online and inclass*/
+    text-decoration: none; /*remove hyperlink under online and inclass*/
+    display: block; /*online and inclass should be one below the other*/
+    /*  text-align: left;*/
+}
+
+.dropdown-content a:hover {
+    /*   background-color: #ddd;*/
+    /*color when hover over: online or inclass*/
+    background-color: lightskyblue;
+}
+
+.dropdown:hover .dropdown-content {
+    /*the shape of the container of the drop down*/
+    display: block;
+}
+/*style for the word: 'classes' to be the same as the headers on navigation bar*/
+
+.word_style{
+      color : black;
+      font-family: inherit;
+      font-size : 22px;   /*try font-size : large here*/
+}
+
+.responsive {
+  max-width: 40%;
+  height: auto;
+}
