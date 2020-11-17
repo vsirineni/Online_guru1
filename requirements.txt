@@ -1,6 +1,6 @@
 Django==2.2.4
 pytz==2019.3
-whitenoise==4.1.4
+whitCD enoise==4.1.4
 gunicorn==20.0.0
 psycopg2==2.8.5
 dj-config-url==0.1.1
